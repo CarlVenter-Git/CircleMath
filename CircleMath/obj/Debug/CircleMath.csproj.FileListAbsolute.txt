@@ -1,0 +1,10 @@
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.Properties.Resources.resources
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.csproj.GenerateResource.cache
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.csproj.CoreCompileInputs.cache
+C:\Users\carlv\source\repos\CircleMath\CircleMath\bin\Debug\CircleMath.exe.config
+C:\Users\carlv\source\repos\CircleMath\CircleMath\bin\Debug\CircleMath.exe
+C:\Users\carlv\source\repos\CircleMath\CircleMath\bin\Debug\CircleMath.pdb
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.exe
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.pdb
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.csprojAssemblyReference.cache
+C:\Users\carlv\source\repos\CircleMath\CircleMath\obj\Debug\CircleMath.Main.resources
