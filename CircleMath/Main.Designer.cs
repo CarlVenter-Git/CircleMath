@@ -30,10 +30,13 @@
         {
             this.canvas = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnTimesTableDecrease = new System.Windows.Forms.Button();
+            this.btnTimesTableIncrease = new System.Windows.Forms.Button();
+            this.btnDivisionDecrease = new System.Windows.Forms.Button();
+            this.btnDivisionIncrease = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtTimesTable = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.txtCircleDivisions = new System.Windows.Forms.TextBox();
             this.doMath = new System.Windows.Forms.Button();
             this.panel2.SuspendLayout();
@@ -52,22 +55,69 @@
             // 
             this.panel2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel2.Controls.Add(this.btnTimesTableDecrease);
+            this.panel2.Controls.Add(this.btnTimesTableIncrease);
+            this.panel2.Controls.Add(this.btnDivisionDecrease);
+            this.panel2.Controls.Add(this.btnDivisionIncrease);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.txtTimesTable);
-            this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.txtCircleDivisions);
             this.panel2.Controls.Add(this.doMath);
-            this.panel2.Location = new System.Drawing.Point(0, 472);
+            this.panel2.Location = new System.Drawing.Point(0, 469);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(594, 89);
+            this.panel2.Size = new System.Drawing.Size(594, 92);
             this.panel2.TabIndex = 1;
+            // 
+            // btnTimesTableDecrease
+            // 
+            this.btnTimesTableDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimesTableDecrease.Location = new System.Drawing.Point(360, 40);
+            this.btnTimesTableDecrease.Name = "btnTimesTableDecrease";
+            this.btnTimesTableDecrease.Size = new System.Drawing.Size(30, 23);
+            this.btnTimesTableDecrease.TabIndex = 9;
+            this.btnTimesTableDecrease.Text = "-";
+            this.btnTimesTableDecrease.UseVisualStyleBackColor = true;
+            this.btnTimesTableDecrease.Click += new System.EventHandler(this.BtnTimesTableDecrease_Click);
+            // 
+            // btnTimesTableIncrease
+            // 
+            this.btnTimesTableIncrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTimesTableIncrease.Location = new System.Drawing.Point(360, 10);
+            this.btnTimesTableIncrease.Name = "btnTimesTableIncrease";
+            this.btnTimesTableIncrease.Size = new System.Drawing.Size(30, 23);
+            this.btnTimesTableIncrease.TabIndex = 8;
+            this.btnTimesTableIncrease.Text = "+";
+            this.btnTimesTableIncrease.UseVisualStyleBackColor = true;
+            this.btnTimesTableIncrease.Click += new System.EventHandler(this.BtnTimesTableIncrease_Click);
+            // 
+            // btnDivisionDecrease
+            // 
+            this.btnDivisionDecrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDivisionDecrease.Location = new System.Drawing.Point(113, 40);
+            this.btnDivisionDecrease.Name = "btnDivisionDecrease";
+            this.btnDivisionDecrease.Size = new System.Drawing.Size(30, 23);
+            this.btnDivisionDecrease.TabIndex = 7;
+            this.btnDivisionDecrease.Text = "-";
+            this.btnDivisionDecrease.UseVisualStyleBackColor = true;
+            this.btnDivisionDecrease.Click += new System.EventHandler(this.BtnDivisionDecrease_Click);
+            // 
+            // btnDivisionIncrease
+            // 
+            this.btnDivisionIncrease.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDivisionIncrease.Location = new System.Drawing.Point(113, 10);
+            this.btnDivisionIncrease.Name = "btnDivisionIncrease";
+            this.btnDivisionIncrease.Size = new System.Drawing.Size(30, 23);
+            this.btnDivisionIncrease.TabIndex = 6;
+            this.btnDivisionIncrease.Text = "+";
+            this.btnDivisionIncrease.UseVisualStyleBackColor = true;
+            this.btnDivisionIncrease.Click += new System.EventHandler(this.BtnDivisionIncrease_Click);
             // 
             // label3
             // 
             this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(257, 67);
+            this.label3.Location = new System.Drawing.Point(257, 70);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 5;
@@ -77,7 +127,7 @@
             // 
             this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(9, 67);
+            this.label2.Location = new System.Drawing.Point(9, 70);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(99, 13);
             this.label2.TabIndex = 4;
@@ -87,28 +137,17 @@
             // 
             this.txtTimesTable.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtTimesTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimesTable.Location = new System.Drawing.Point(260, 7);
+            this.txtTimesTable.Location = new System.Drawing.Point(260, 10);
             this.txtTimesTable.Name = "txtTimesTable";
             this.txtTimesTable.Size = new System.Drawing.Size(94, 53);
             this.txtTimesTable.TabIndex = 3;
             this.txtTimesTable.Text = "10";
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(158, 10);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(47, 46);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "X";
-            // 
             // txtCircleDivisions
             // 
             this.txtCircleDivisions.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.txtCircleDivisions.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCircleDivisions.Location = new System.Drawing.Point(12, 7);
+            this.txtCircleDivisions.Location = new System.Drawing.Point(12, 10);
             this.txtCircleDivisions.Name = "txtCircleDivisions";
             this.txtCircleDivisions.Size = new System.Drawing.Size(94, 53);
             this.txtCircleDivisions.TabIndex = 1;
@@ -118,9 +157,9 @@
             // 
             this.doMath.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.doMath.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.doMath.Location = new System.Drawing.Point(488, 7);
+            this.doMath.Location = new System.Drawing.Point(497, 10);
             this.doMath.Name = "doMath";
-            this.doMath.Size = new System.Drawing.Size(94, 70);
+            this.doMath.Size = new System.Drawing.Size(94, 53);
             this.doMath.TabIndex = 0;
             this.doMath.Text = "Go";
             this.doMath.UseVisualStyleBackColor = true;
@@ -150,10 +189,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button doMath;
         private System.Windows.Forms.TextBox txtTimesTable;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtCircleDivisions;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnTimesTableDecrease;
+        private System.Windows.Forms.Button btnTimesTableIncrease;
+        private System.Windows.Forms.Button btnDivisionDecrease;
+        private System.Windows.Forms.Button btnDivisionIncrease;
     }
 }
 
