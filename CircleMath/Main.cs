@@ -16,7 +16,7 @@ namespace CircleMath
         static Thread thread;
         static Bitmap bitmap;
 
-        static Int16 timesTable = 0;
+        static Double timesTable = 0;
         static Double theta = 0;
         static Double increment = 0; //number of points on circle circumfrence
         static float radius = 0.0f;
@@ -34,8 +34,8 @@ namespace CircleMath
         {
             Main_Resize(sender, e);//Get the intial size of the canvas
 
-            timesTable = Int16.Parse(txtTimesTable.Text);
-            theta = 360 / Int64.Parse(txtCircleDivisions.Text);
+            timesTable = Double.Parse(txtTimesTable.Text);
+            theta = 360 / Double.Parse(txtCircleDivisions.Text);
         }
 
         private void DoMath_Click(object sender, EventArgs e)
@@ -47,8 +47,8 @@ namespace CircleMath
         {
             Main_Resize(this, new EventArgs());//making sure the canvas is the correct size when the go button is clicked
 
-            timesTable = Int16.Parse(txtTimesTable.Text);
-            theta = 360 / Int64.Parse(txtCircleDivisions.Text);//workes out the number of evenly sized slices needed
+            timesTable = Double.Parse(txtTimesTable.Text);
+            theta = 360 / Double.Parse(txtCircleDivisions.Text);//workes out the number of evenly sized slices needed
             increment = theta;//increment to store the angle of each section of the circle
 
             bitmap = new Bitmap(canvas.Width, canvas.Height);
@@ -61,8 +61,8 @@ namespace CircleMath
         private void Draw()
         {
             Bitmap buffer = new Bitmap(canvas.Width, canvas.Height);
-            var valuePairs = new Dictionary<Int64, PointF>();
-            Int64 temp = 0;
+            var valuePairs = new Dictionary<Double, PointF>();
+            Double temp = 0;
 
             canvas.BackColor = Color.Black;
 
@@ -82,7 +82,7 @@ namespace CircleMath
                 for (int i = 0; i < valuePairs.Count; i++)
                 {
                     temp = (i * timesTable) % 10;//gets last digit of result as index of the line destination
-                    nextPoint = valuePairs[temp];
+                    nextPoint = valuePairs[(long)temp];
 
                     g.DrawLine(pen, valuePairs[i], nextPoint);
 
@@ -92,7 +92,7 @@ namespace CircleMath
                     }
                 }
             }
-
+            
             canvas.Invalidate();//So the last line gets drawn
         }
 
@@ -116,9 +116,9 @@ namespace CircleMath
 
         private void BtnDivisionIncrease_Click(object sender, EventArgs e)
         {
-            Int16 temp;
+            Double temp;
 
-            temp = Int16.Parse(txtCircleDivisions.Text);
+            temp = Double.Parse(txtCircleDivisions.Text);
             temp++;
             txtCircleDivisions.Text = temp.ToString();
 
@@ -127,9 +127,9 @@ namespace CircleMath
 
         private void BtnDivisionDecrease_Click(object sender, EventArgs e)
         {
-            Int16 temp;
+            Double temp;
 
-            temp = Int16.Parse(txtCircleDivisions.Text);
+            temp = Double.Parse(txtCircleDivisions.Text);
             temp--;
             txtCircleDivisions.Text = temp.ToString();
 
@@ -138,10 +138,10 @@ namespace CircleMath
 
         private void BtnTimesTableIncrease_Click(object sender, EventArgs e)
         {
-            Int16 temp;
+            Double temp;
 
-            temp = Int16.Parse(txtTimesTable.Text);
-            temp++;
+            temp = Double.Parse(txtTimesTable.Text);
+            temp += 0.1;
             txtTimesTable.Text = temp.ToString();
 
             DoMath();
@@ -149,10 +149,10 @@ namespace CircleMath
 
         private void BtnTimesTableDecrease_Click(object sender, EventArgs e)
         {
-            Int16 temp;
+            Double temp;
 
-            temp = Int16.Parse(txtTimesTable.Text);
-            temp--;
+            temp = Double.Parse(txtTimesTable.Text);
+            temp -= 0.1;
             txtTimesTable.Text = temp.ToString();
 
             DoMath();
